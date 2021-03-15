@@ -1,0 +1,33 @@
+body {
+	padding: 1rem 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+form {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex: 1;
+	flex-direction: column;
+}
+img {
+	width: 30vw;
+}
+select {
+	padding: .5rem 1.5rem;
+}
+button, a{
+	padding: 1rem 2rem;
+	background-color: crimson;
+	border-color: brown;
+	color: white;
+	font-size: 150%;
+	text-decoration: none;
+}
+
+@media(max-width: 750px){
+	body, html{
+		overflow: hidden
+	}
+}
