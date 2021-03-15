@@ -1,3 +1,5 @@
+const splashAudio = new Audio('../splash.mp3')
+
 const dificulties = {
 	'cn': 120,
 	'd' : 90,
@@ -85,4 +87,10 @@ function recycle(){
 recycle()
 finishCountdown()
 
-mosquito.addEventListener('click', recycle)
+mosquito.addEventListener(
+	'click',
+	() => {
+		splashAudio.play()
+		recycle()
+	}
+)
