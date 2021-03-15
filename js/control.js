@@ -4,7 +4,7 @@ const dificulties = {
 	'n' : 60,
 	'f' : 30
 }
-const dificulty = location.search.split('?')[1].split('=')[1]
+const dificulty = location.search.split('=')[1]
 let timeToFinish = Number(dificulties[dificulty ?? 'n'])
 let finishCountdownTimeout
 
@@ -33,10 +33,15 @@ function finishCountdown (){
 
 	if(timeToFinish <= 0){
 		clearTimeout(finishCountdownTimeout)
-		location.replace('../vitoria')
+		location.replace(`../vitoria`)
 	}
 
 	timeToFinish--
+	document.getElementById('tempo-restante').innerText = 
+		timeToFinish <= 0 ?
+			'0' :
+			String(timeToFinish)
+
 	finishCountdownTimeout = setTimeout(
 		finishCountdown,
 		1000
@@ -71,7 +76,7 @@ function recycle(){
 				let heart = lifesHTML.querySelector('#life-2')
 				setFullHeartToEmptyHeart(heart)
 			} else if (lifes === 0){
-				location.replace('../game-over')
+				location.replace(`../game-over`)
 			}
 		},
 		secondsToRecycle * 1000
